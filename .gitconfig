@@ -1,0 +1,15 @@
+[user]
+[alias]
+	unstage = reset HEAD --
+	co = checkout
+	cm = commit
+	br = branch
+	st = status
+	last = log -1 HEAD
+	vis = !gitk
+  laststash = stash show -p stash@{0}
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[user]
+	email = sbeam@syxyz.net
+	name = Sam Beam
