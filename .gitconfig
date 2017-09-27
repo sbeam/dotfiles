@@ -1,3 +1,5 @@
+[core]
+	ignorecase = true
 [user]
 [alias]
 	unstage = reset HEAD --
@@ -7,9 +9,13 @@
 	st = status
 	last = log -1 HEAD
 	vis = !gitk
+  dm = diff master...HEAD
   laststash = stash show -p stash@{0}
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[rerere]
+	enabled = true
 [user]
-	email = sbeam@syxyz.net
 	name = Sam Beam
+	initials = sb
+	email = sbeam@syxyz.net
