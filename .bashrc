@@ -157,6 +157,8 @@ On_ICyan="\[\033[0;106m\]"    # Cyan
 On_IWhite="\[\033[0;107m\]"   # White
 #}}}#}}}
 
+export PS1='\h \W/\a\W\ $ '
+
 [ -f $HOME/.git/git-prompt.sh ] && source $HOME/.git/git-prompt.sh
 [ -f $HOME/.git/git-completion.sh ] && source $HOME/.git/git-completion.sh
 
@@ -165,14 +167,21 @@ function __git_pair {
   [ "$ini" != "" ] && [ "$ini" != "sb" ] && echo "$ini "
 }
 
-#export PS1='\[\e]2;\h \W/\a\[\e[30;1m\]\W\[\e[0;34m\]\[\e[35;1m\]$\[\e[0m\] '
-export PS1='\h \W/\a\W\ $ '
-export PROMPT_COMMAND='__git_ps1 "$Grey\W/$Color_Off" "$Purple$(__git_pair)$Red\[\]❯$Green\[\]❯$Blue\[\]❯$Color_Off "'
-# seems ok but boring:
-# export PROMPT_COMMAND='__git_ps1 "$Grey\W:$Color_Off" "$\[\e[0;00m\] "'
+# using a magic fancy prompt like the fancy folks https://github.com/magicmonty/bash-git-prompt
+GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_FETCH_REMOTE_STATUS=0
+GIT_PROMPT_SHOW_UNTRACKED_FILES=no
+GIT_PROMPT_THEME=Solarized
+GIT_PROMPT_START="$Yellow\\W$Color_Off"
+GIT_PROMPT_END="$Purple$(__git_pair)$BIBlue\[\]❯$Cyan\[\]❯$Blue\[\]❯$Color_Off "
+[ -f $HOME/.git/bash-git-prompt/gitprompt.sh ] && source $HOME/.git/bash-git-prompt/gitprompt.sh
 
-#export PROMPT_COMMAND='__git_ps1 "$Grey\W$Cyan" "$Blue\[\]❯$Yellow\[\]❯$Cyan\[\]❯$Color_Off "'
+# export PROMPT_COMMAND='__git_ps1 "$Grey\W/$Color_Off" "$Purple$(__git_pair)$Red\[\]❯$Green\[\]❯$Blue\[\]❯$Color_Off "'
 
-# old:
-#export PROMPT_COMMAND='__git_ps1 "\[\e]2;\h \W/\a\[\e[30;1m\]\W\[\e[0;34m\]" "\\[\e[35;1m\]$\[\e[0m\] "'
+if [ -f ./.bashrc.local ]; then
+	. ./.bashrc.local
+fi
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
