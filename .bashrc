@@ -157,8 +157,6 @@ On_ICyan="\[\033[0;106m\]"    # Cyan
 On_IWhite="\[\033[0;107m\]"   # White
 #}}}#}}}
 
-export PS1='\h \W/\a\W\ $ '
-
 [ -f $HOME/.git/git-prompt.sh ] && source $HOME/.git/git-prompt.sh
 [ -f $HOME/.git/git-completion.sh ] && source $HOME/.git/git-completion.sh
 
@@ -177,6 +175,7 @@ GIT_PROMPT_END="$Purple$(__git_pair)$BIBlue\[\]❯$Cyan\[\]❯$Blue\[\]❯$Color
 [ -f $HOME/.git/bash-git-prompt/gitprompt.sh ] && source $HOME/.git/bash-git-prompt/gitprompt.sh
 
 # export PROMPT_COMMAND='__git_ps1 "$Grey\W/$Color_Off" "$Purple$(__git_pair)$Red\[\]❯$Green\[\]❯$Blue\[\]❯$Color_Off "'
+export PS1='\[\e]2;\h \W/\a\[\e[30;1m\]\W\[\e[0;34m\]\[\e[35;1m\]$\[\e[0m\] '
 
 if [ -f ./.bashrc.local ]; then
 	. ./.bashrc.local

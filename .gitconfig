@@ -1,10 +1,12 @@
 [core]
 	ignorecase = true
+	excludesfile = /Users/sbeam/.gitignore
 [user]
 [alias]
 	unstage = reset HEAD --
 	co = checkout
-	cm = commit
+	c = commit
+	cnv = commit --no-verify
 	br = branch
 	st = status
 	last = log -1 HEAD
@@ -13,6 +15,7 @@
   laststash = stash show -p stash@{0}
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  thisbranch = rev-parse --abbrev-ref HEAD
 [rerere]
 	enabled = true
 [user]
