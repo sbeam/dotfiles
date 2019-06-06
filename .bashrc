@@ -172,6 +172,7 @@ GIT_PROMPT_SHOW_UNTRACKED_FILES=no
 GIT_PROMPT_THEME=Solarized
 GIT_PROMPT_START="$Yellow\\W$Color_Off"
 GIT_PROMPT_END="$Purple$(__git_pair)$BIBlue\[\]❯$Cyan\[\]❯$Blue\[\]❯$Color_Off "
+GIT_PROMPT_IGNORE_STASH=1
 [ -f $HOME/.git/bash-git-prompt/gitprompt.sh ] && source $HOME/.git/bash-git-prompt/gitprompt.sh
 
 # export PROMPT_COMMAND='__git_ps1 "$Grey\W/$Color_Off" "$Purple$(__git_pair)$Red\[\]❯$Green\[\]❯$Blue\[\]❯$Color_Off "'

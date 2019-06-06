@@ -16,6 +16,8 @@
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
   thisbranch = rev-parse --abbrev-ref HEAD
+  fixup-author = commit --amend --reset-author --no-edit
+	force = push --force-with-lease
 [rerere]
 	enabled = true
 [user]

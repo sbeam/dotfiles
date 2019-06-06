@@ -23,3 +23,4 @@ alias befs='bundle exec foreman start -f Procfile.development'
 alias chrome_suffer='open /Applications/Google\ Chrome.app --args --disable-web-security'
 alias vimswapclean='find . -name \*.sw[po] -exec rm {} \;'
 alias nuke_test_db='bundle exec rake db:migrate:reset db:seed RAILS_ENV=test'
+alias nuke_pumas="lsof -i tcp:3000 | awk '{print \$2}' | tail +2 | xargs kill"
