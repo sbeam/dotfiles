@@ -18,6 +18,7 @@
   thisbranch = rev-parse --abbrev-ref HEAD
   fixup-author = commit --amend --reset-author --no-edit
 	force = push --force-with-lease
+  deleteremotebranch = push origin --delete
 [rerere]
 	enabled = true
 [user]
