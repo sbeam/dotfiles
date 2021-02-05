@@ -19,6 +19,9 @@
   fixup-author = commit --amend --reset-author --no-edit
 	force = push --force-with-lease
   deleteremotebranch = push origin --delete
+	pushup = !git push --set-upstream origin `git symbolic-ref --short HEAD`
+	pullup = "!f() { BRANCH=$(git symbolic-ref --short HEAD); if [ $# -eq 0 ] || [[ $BRANCH == $1 ]]; then git pull --ff-only; else git fetch origin $1:$1; fi; }; f"
+	trim = !git fetch --prune && git branch --merged | grep -E -v \"^((\\* )|\\s*(develop|master)$)\" | xargs git branch -d
 [rerere]
 	enabled = true
 [user]
