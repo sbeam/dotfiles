@@ -25,3 +25,5 @@
 	name = Sam Beam
 	initials = sb
 	email = sbeam@syxyz.net
+[branch]
+  autosetuprebase = remote

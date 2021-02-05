@@ -8,3 +8,4 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/opt/curl/bin:$PATH"
